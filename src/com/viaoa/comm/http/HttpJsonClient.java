@@ -31,7 +31,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import com.viaoa.datetime.OADate;
-import com.viaoa.graph.OAGraphInternal;
+import com.viaoa.graph.api.internal.OAGraphInternal;
 import com.viaoa.graph.service.object.OAObjectInfoService;
 import com.viaoa.lang.OAString;
 import com.viaoa.metadata.OAObjectInfo;
