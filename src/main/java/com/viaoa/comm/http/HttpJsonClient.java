@@ -510,7 +510,7 @@ public class HttpJsonClient {
 	 */
 	public String urlEncode(OAObject obj) throws Exception {
 		final OAGraphInternal og = (OAGraphInternal) OARuntime.graph(obj.getClass());
-		OAObjectInfo oi = og.objectsInternal().callObjectInfoGetOAObjectInfo(obj.getClass());
+		OAObjectInfo oi = og.internal().objects().info().getOAObjectInfo(obj.getClass());
 		Map<String, String> map = new HashMap<>();
 
 		for (OAPropertyInfo pi : oi.getPropertyInfos()) {
