@@ -31,11 +31,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import com.viaoa.datetime.OADate;
-import com.viaoa.graph.api.internal.OAGraphInternal;
-import com.viaoa.graph.service.object.OAObjectInfoService;
 import com.viaoa.lang.OAString;
 import com.viaoa.metadata.OAObjectInfo;
 import com.viaoa.metadata.OAPropertyInfo;
+import com.viaoa.oa.OA;
+import com.viaoa.oa.service.object.OAObjectInfoService;
 import com.viaoa.object.OAObject;
 import com.viaoa.runtime.OARuntime;
 import com.viaoa.secure.Base64;
@@ -509,7 +509,7 @@ public class HttpJsonClient {
 	 * @throws Exception if reflection or encoding fails
 	 */
 	public String urlEncode(OAObject obj) throws Exception {
-		final OAGraphInternal og = (OAGraphInternal) OARuntime.graph(obj.getClass());
+		OA og = OARuntime.oa(obj.getClass());
 		OAObjectInfo oi = og.internal().objects().info().getOAObjectInfo(obj.getClass());
 		Map<String, String> map = new HashMap<>();
 
